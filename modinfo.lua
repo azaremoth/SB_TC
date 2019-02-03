@@ -8,9 +8,7 @@ return {
   mutator = 'Official',
   modtype = 1,
   depend = {
-      -- 'rapid://sbc:test',
       'SpringBoard Core $VERSION',
-      -- 'thecursed:latest',
-      'The Cursed $VERSION',
+      'Spring Features v1.9'	  
   },
 }

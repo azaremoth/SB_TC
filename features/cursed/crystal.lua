@@ -1,0 +1,26 @@
+local objectname= "koth_crystal" 
+local featureDef  =  {
+   name           = "koth_crystal",
+   blocking       = true,	
+   mass			   = 1000000000,
+   category         = [[dragonteeth]],
+   collisionVolumeType 	= "Box",
+   collisionVolumeScales 	= "15 10 15",
+   collisionVolumeOffsets 	= "0 0 0", 
+   damage            = 10000,
+   description       = "purple crystal",
+   energy            = 0,
+   flammable         = 0,
+   nodrawundergray   = false,
+   footprintX        = 1,
+   footprintZ        = 1,
+   upright          = false,
+   height      		= "10",
+   hitdensity       = "1000000000",
+   metal            = 0,
+   object           = "crystal.s3o",  
+   reclaimable		= false,
+   autoreclaimable	= false,
+   world            = "allworld",
+}
+return lowerkeys({[featureDef.name] = featureDef})

@@ -1,0 +1,370 @@
+[SUMMONDRAGON]
+{
+	[greenspikes]
+	{
+		class=CExploSpikeProjectile;
+		[properties]
+		{
+			dir=-4 r8,-4 r8,-4 r8;
+			width=2 r1.0;
+			length=6 r2.0;
+			alpha=0.4 r0.1;
+			alphadecay=0.1 r 0.05;
+			color=0.5, 1.0, 0.15;
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=6; 
+	}
+	[purplespikes]
+	{
+		class=CExploSpikeProjectile;
+		[properties]
+		{
+			dir=-4 r8,-4 r8,-4 r8;
+			width=2 r1.0;
+			length=8 r3.0;
+			alpha=0.4 r0.1;
+			alphadecay=0.1 r 0.05;
+			color=0.5, 0.01, 0.45;
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=6; 
+	}
+}
+
+[SUMMONDRAGON2]
+{
+   [BOOM]
+   {
+   class=heatcloud;
+      
+      [properties]
+            {
+      texture=firecloud2;
+            heat = 10;
+            maxheat = 15;
+            heatFalloff = 0.2;
+
+            size = 100;
+            sizeGrowth = 0.9;
+
+            pos = r-2 r2, 5, r-2 r2;
+            speed=0, 1 0, 0;
+            }
+   	air=1;
+         water=1;
+         ground=1;
+         count=1;
+   }
+
+   [firepoof2]
+   {
+   class=CSimpleParticleSystem;
+
+      [properties]
+      {
+      Texture=firecloud2;
+
+      colorMap   = 0.2 1.0 0.2 0.04   0.7 0.7 0.2 0.01   0.5 0.01 0.45 0.01;
+
+      pos       = 0, 5, 0;
+      gravity      = 0, -0.005, 0;
+      emitVector   = 0, 1, 0;
+      emitRot      = 60;
+      emitRotSpread   = 32;
+
+      sizeGrowth   = 0.8;
+      sizeMod      = 1.0;
+
+      airdrag         = 0.8;
+      particleLife      = 7;
+      particleLifeSpread   = 16;
+      numParticles      = 16;
+      particleSpeed      = 16;
+      particleSpeedSpread   = 1;
+      particleSize      = 44;
+      particleSizeSpread   = 0;
+
+      directional      = 0;
+      useAirLos      = 0;
+      }
+   air=1;
+   ground=1;
+   water=1;
+   count=1;
+   }
+	[sparks]
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0 r150, 0 r150, 0 r150; 
+		delay=0 r66;	
+		explosionGenerator=custom:SUMMONDRAGON; 
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=60;
+	}
+}
+
+[DRAGONFLAMETRAIL] {
+	[smoke] {
+		class=CSimpleParticleSystem;
+		[properties]{
+			sizeGrowth=1.2;
+			sizeMod=1;
+			pos=0, 0, 0;
+			emitVector=dir;
+			gravity=0, 0, 0;
+			colorMap=0.2 1.0 0.2 0.08 	0.7 0.9 0.2 0.05 	0.15 0.35 0.15 0.05		0 0 0 0;
+			Texture=greenfiretrail;
+			airdrag=0.5;
+			particleLife=5;
+			particleLifeSpread=3;
+			numParticles=1;
+			particleSpeed=i1;
+			particleSpeedSpread=0.5;
+			particleSize=18;
+			particleSizeSpread=8;
+			emitRot=0;
+			emitRotSpread=0;
+			directional=1;
+			alwaysVisible=0;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=2;
+	}
+   [groundflash]
+	{
+	ttl = 5;
+	flashSize = 30;
+	flashAlpha = 0.05;
+	circleGrowth = 0;
+	circleAlpha = 0;
+    color = 0.78, 0.92, 0.35;
+	air=1;
+    ground=1;
+    water=1;
+	}
+}
+
+[DRAGONFLAMEEXPLOSION]
+{
+	usedefaultexplosions=0;
+	[flames] {
+		class=CExpGenSpawner;
+		[properties]{
+			pos=-16 r32, r16, -16 r32;
+			delay=4 r16;
+			explosionGenerator=custom:DRAGONFLAMES;
+		}
+		unit=1;
+		ground=1;
+		count=8;
+	}
+	
+	[fire] {
+		class=CSimpleParticleSystem;
+		[properties]{
+			sizeGrowth=0.75;
+			sizeMod=1;
+			pos=-4 r8, 0, -4 r8;
+			emitVector=0, 1, 0;
+			gravity=0, 0, 0;
+			colorMap=1 1 1 0.1  0 0 0 0;
+			Texture=greenfireflame;
+			airdrag=0.75;
+			particleLife=32;
+			particleLifeSpread=16;
+			numParticles=1;
+			particleSpeed=0;
+			particleSpeedSpread=4;
+			particleSize=1;
+			particleSizeSpread=2;
+			emitRot=80;
+			emitRotSpread=5;
+			directional=0;
+			alwaysVisible=0;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=4;
+	}
+	
+	[groundflash] {
+		flashsize=96;
+		flashalpha=0.0625;
+		circlegrowth=10;
+		circlealpha=0;
+		ttl=48;
+		color = 0.78, 0.92, 0.35;
+	}
+}
+
+[DRAGONFLAMES] {
+	[flames] {
+		class=CSimpleParticleSystem;
+		[properties]{
+			sizeGrowth=0;
+			sizeMod=1;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0, 0.1, 0;
+			colorMap=1 1 1 0.2  0 0 0 0.3  0 0 0 0;
+			Texture=greenfireflame;
+			airdrag=0.95;
+			particleLife=24;
+			particleLifeSpread=16;
+			numParticles=1;
+			particleSpeed=0;
+			particleSpeedSpread=1;
+			particleSize=2;
+			particleSizeSpread=16;
+			emitRot=0;
+			emitRotSpread=5;
+			directional=0;
+			alwaysVisible=0;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+}
+
+[BIGDRAGONFLAMETRAIL] {
+	[smoke] {
+		class=CSimpleParticleSystem;
+		[properties]{
+			sizeGrowth=1.2;
+			sizeMod=1;
+			pos=0, 0, 0;
+			emitVector=dir;
+			gravity=0, 0, 0;
+			colorMap=0.2 1.0 0.2 0.08 	0.7 0.9 0.2 0.05 0.35 0.15 0.15 0.05	0 0 0 0;
+			Texture=greenfiretrail;
+			airdrag=0.5;
+			particleLife=5;
+			particleLifeSpread=3;
+			numParticles=1;
+			particleSpeed=i1;
+			particleSpeedSpread=0.5;
+			particleSize=25;
+			particleSizeSpread=10;
+			emitRot=0;
+			emitRotSpread=0;
+			directional=1;
+			alwaysVisible=0;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=2;
+	}
+   [groundflash]
+	{
+	ttl = 5;
+	flashSize = 50;
+	flashAlpha = 0.05;
+	circleGrowth = 0;
+	circleAlpha = 0;
+    color = 0.78, 0.92, 0.35;
+	air=1;
+    ground=1;
+    water=1;
+	}
+}
+
+[BIGDRAGONFLAMEEXPLOSION]
+{
+	usedefaultexplosions=0;
+	[flames] {
+		class=CExpGenSpawner;
+		[properties]{
+			pos=-16 r32, r16, -16 r32;
+			delay=4 r16;
+			explosionGenerator=custom:BIGDRAGONFLAMES;
+		}
+		unit=1;
+		ground=1;
+		count=12;
+	}
+	
+	[fire] {
+		class=CSimpleParticleSystem;
+		[properties]{
+			sizeGrowth=0.75;
+			sizeMod=1;
+			pos=-4 r8, 0, -4 r8;
+			emitVector=0, 1, 0;
+			gravity=0, 0, 0;
+			colorMap=1 1 1 0.1  0 0 0 0;
+			Texture=greenfireflame;
+			airdrag=0.75;
+			particleLife=45;
+			particleLifeSpread=16;
+			numParticles=1;
+			particleSpeed=0;
+			particleSpeedSpread=4;
+			particleSize=5;
+			particleSizeSpread=10;
+			emitRot=80;
+			emitRotSpread=5;
+			directional=0;
+			alwaysVisible=0;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=6;
+	}
+	
+	[groundflash] {
+		flashsize=128;
+		flashalpha=0.0625;
+		circlegrowth=10;
+		circlealpha=0;
+		ttl=48;
+		color = 0.78, 0.92, 0.35;
+	}
+}
+
+[BIGDRAGONFLAMES] {
+	[flames] {
+		class=CSimpleParticleSystem;
+		[properties]{
+			sizeGrowth=0;
+			sizeMod=1;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0, 0.1, 0;
+			colorMap=1 1 1 0.2  0 0 0 0.3  0 0 0 0;
+			Texture=greenfireflame;
+			airdrag=0.95;
+			particleLife=24;
+			particleLifeSpread=16;
+			numParticles=1;
+			particleSpeed=0;
+			particleSpeedSpread=1;
+			particleSize=15;
+			particleSizeSpread=25;
+			emitRot=0;
+			emitRotSpread=5;
+			directional=0;
+			alwaysVisible=0;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+}
