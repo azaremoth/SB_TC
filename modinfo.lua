@@ -9,6 +9,6 @@ return {
   modtype = 1,
   depend = {
       'SpringBoard Core $VERSION',
-      'Spring Features v1.9'	  
+ --     'Spring Features v1.9'	  
   },
 }
