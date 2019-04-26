@@ -1,20 +1,18 @@
 local base = piece 'base'
 local groundbase = piece 'groundbase'
-local door1 = piece 'door1'
-local door2 = piece 'door2'
 local turret = piece 'turret'
 local arm1 = piece 'arm1'
 local arm2 = piece 'arm2'
 local robohead = piece 'robohead'
 local roboclaw1 = piece 'roboclaw1'
 local roboclaw2 = piece 'roboclaw2'
-local box_16 = piece 'box_16'
-local box_17 = piece 'box_17'
-local box_18 = piece 'box_18'
-local box_19 = piece 'box_19'
-local box_20 = piece 'box_20'
-local box_25 = piece 'box_25'
-local box_27 = piece 'box_27'
+local box_1 = piece 'box_1'
+local box_2 = piece 'box_2'
+local box_3 = piece 'box_3'
+local box_4 = piece 'box_4'
+local box_5 = piece 'box_5'
+local box_6 = piece 'box_6'
+local box_7 = piece 'box_7'
 
 local BUILDINGFX	 = 1024+0
 local BOOM	 = 1025+0
@@ -37,9 +35,6 @@ local function Animation()
 			Turn2( turret, y_axis, -90, 200 )
 			Turn2( arm1, z_axis, 70, 50 )
 			Turn2( arm2, z_axis, -50, 50 )	
-			Sleep(2000)	
-			Turn2( door1, z_axis, -45, 50 )
-			Turn2( door2, z_axis, 45, 50 )
 			Sleep(2000)				
 			Spring.UnitScript.Spin ( robohead, x_axis, 20, 10) 
 			Turn2( roboclaw1, y_axis, -50, 50 )
@@ -56,9 +51,7 @@ local function Animation()
 			Turn2( arm1, z_axis, 0, 50 )
 			Turn2( arm2, z_axis, 30, 50 )
 			Turn2( turret, y_axis, 0, 100 )	
-			Sleep(2000)
-			Turn2( door1, z_axis, 0, 30 )
-			Turn2( door2, z_axis, 0, 30 )			
+			Sleep(2000)	
 		elseif (randomnumber < 0.33) then
 			Spring.UnitScript.Spin ( robohead, x_axis, 20, 10) 
 			Turn2( roboclaw1, y_axis, -70, 50 )
@@ -100,17 +93,17 @@ function script.Create()
 	end
 	Move( groundbase, y_axis, 0, 1000 )	
 	Turn2( arm1, z_axis, 0 )		
-	StartThread( Animation )
+--	StartThread( Animation )
 end
 	
 function script.Killed( damage, health )
 	EmitSfx(base,BOOM)
-	Explode(box_16, SFX.FALL + SFX.NO_HEATCLOUD)		
-	Explode(box_17, SFX.FALL + SFX.NO_HEATCLOUD)	
-	Explode(box_18, SFX.FALL + SFX.NO_HEATCLOUD)	
-	Explode(box_19, SFX.FALL + SFX.NO_HEATCLOUD)	
-	Explode(box_20, SFX.FALL + SFX.NO_HEATCLOUD)		
-	Explode(box_25, SFX.FALL + SFX.NO_HEATCLOUD)	
-	Explode(box_27, SFX.FALL + SFX.NO_HEATCLOUD)		
+	Explode(box_1, SFX.FALL + SFX.NO_HEATCLOUD)		
+	Explode(box_2, SFX.FALL + SFX.NO_HEATCLOUD)	
+	Explode(box_3, SFX.FALL + SFX.NO_HEATCLOUD)	
+	Explode(box_4, SFX.FALL + SFX.NO_HEATCLOUD)	
+	Explode(box_5, SFX.FALL + SFX.NO_HEATCLOUD)		
+	Explode(box_6, SFX.FALL + SFX.NO_HEATCLOUD)	
+	Explode(box_7, SFX.FALL + SFX.NO_HEATCLOUD)		
 	return (1)
 end
