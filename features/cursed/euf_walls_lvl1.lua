@@ -30,7 +30,7 @@ local function CreateWallDef(i)
     burnable    	   = false,
     nodrawundergray    = true,  	
     reclaimable        = true,	
-	upright 	       = false,	
+	upright 	       = false,	 	
   }
 end
 

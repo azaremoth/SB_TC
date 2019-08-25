@@ -1,6 +1,6 @@
-local objectname= "tower2" 
+local objectname= "tower3" 
 local featureDef  =  {
-   name           = "tower2",
+   name           = "tower3",
    blocking       = true,	
    mass			   = 1000000000,
    collisionVolumeType 	= "Box",
@@ -17,7 +17,7 @@ local featureDef  =  {
    height      		= "60",
    hitdensity       = "1000000000",
    metal            = 0,
-   object           = "features/tower2.s3o",  
+   object           = "features/tower3.s3o",  
    reclaimable		= false,
    autoreclaimable	= false,
    world            = "allworld",
