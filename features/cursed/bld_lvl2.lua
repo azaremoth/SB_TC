@@ -1,17 +1,17 @@
 local objects = {
-	"features/modtower/bld_L1_1.s3o",
-	"features/modtower/bld_L1_2.s3o",
-	"features/modtower/bld_L1_3.s3o",
-	"features/modtower/bld_L1_4.s3o",
-	"features/modtower/bld_L1_5.s3o",
-	"features/modtower/bld_L1_6.s3o",
-	"features/modtower/bld_L1_7.s3o",
-	"features/modtower/bld_L1_8.s3o",		
+	"features/modtower/bld_L2_1.s3o",
+	"features/modtower/bld_L2_2.s3o",
+	"features/modtower/bld_L2_3.s3o",
+	"features/modtower/bld_L2_4.s3o",
+	"features/modtower/bld_L2_5.s3o",
+	"features/modtower/bld_L2_6.s3o",
+	"features/modtower/bld_L2_7.s3o",
+	"features/modtower/bld_L2_8.s3o",		
 }
 
 local BuildingModuleDef = {}
 local function createBuildingModuleDef(i)
-  BuildingModuleDef["buildingmodule_lvl1_" .. i] = {
+  BuildingModuleDef["buildingmodule_lvl2_" .. i] = {
      description = [[Building]],
 	 autoreclaimable = false,
      blocking    = true,

@@ -1,5 +1,3 @@
--- $Id$
-
 local objects = {
 	"features/modtower/bld_L0_1.s3o",
 	"features/modtower/bld_L0_2.s3o",
@@ -31,7 +29,7 @@ local function createBuildingModuleDef(i)
      footprintZ  = 6,
 	 collisionVolumeType 	= "Box",
 	 collisionVolumeScales 	= "60 30 60",
-	 collisionVolumeOffsets 	= "0 0 0", 
+--	 collisionVolumeOffsets 	= "0 0 0", 
 	 customparams = { 
 			normaltex 		= "unittextures/normalmaps/atlas_euf_buildings_normal.png",
 			normalmaps 		= "yes",			

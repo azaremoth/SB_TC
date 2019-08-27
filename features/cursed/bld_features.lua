@@ -1,18 +1,20 @@
 local objects = {
-	"features/modtower/bld_L1_1.s3o",
-	"features/modtower/bld_L1_2.s3o",
-	"features/modtower/bld_L1_3.s3o",
-	"features/modtower/bld_L1_4.s3o",
-	"features/modtower/bld_L1_5.s3o",
-	"features/modtower/bld_L1_6.s3o",
-	"features/modtower/bld_L1_7.s3o",
-	"features/modtower/bld_L1_8.s3o",		
+	"features/modtower/bld_L0_F1.s3o",
+	"features/modtower/bld_L0_F2.s3o",
+	"features/modtower/bld_L1_F1.s3o",
+	"features/modtower/bld_L1_F2.s3o",
+	"features/modtower/bld_L2_F1.s3o",
+	"features/modtower/bld_L2_F2.s3o",
+	"features/modtower/bld_L3_F1.s3o",
+	"features/modtower/bld_L3_F2.s3o",
+	"features/modtower/bld_L4_F1.s3o",
+	"features/modtower/bld_L4_F2.s3o",
 }
 
 local BuildingModuleDef = {}
 local function createBuildingModuleDef(i)
-  BuildingModuleDef["buildingmodule_lvl1_" .. i] = {
-     description = [[Building]],
+  BuildingModuleDef["buildingfeature_" .. i] = {
+     description = [[Building Attachment]],
 	 autoreclaimable = false,
      blocking    = true,
      burnable    = false,
@@ -25,10 +27,10 @@ local function createBuildingModuleDef(i)
      reclaimTime = 9999999999,
      mass        = 9999999999,
      object = objects[(i % #objects) + 1] ,
-     footprintX  = 6,
-     footprintZ  = 6,
+     footprintX  = 1,
+     footprintZ  = 1,
 	 collisionVolumeType 	= "Box",
-	 collisionVolumeScales 	= "60 30 60",
+	 collisionVolumeScales 	= "3 3 3",
 --	 collisionVolumeOffsets 	= "0 0 0", 
 	 customparams = { 
 			normaltex 		= "unittextures/normalmaps/atlas_euf_buildings_normal.png",
@@ -37,7 +39,7 @@ local function createBuildingModuleDef(i)
   }
 end
 
-for i=1,8 do
+for i=1,10 do
   createBuildingModuleDef(i)
 end
 
