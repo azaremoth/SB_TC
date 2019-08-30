@@ -7,7 +7,7 @@ local featureDef  =  {
    collisionVolumeScales 	= "60 60 60",
    collisionVolumeOffsets 	= "0 0 0", 
    damage            = 10000,
-   description       = "Building",
+   description       = "Big house",
    energy            = 0,
    flammable         = 0,
    nodrawundergray   = false,
@@ -21,9 +21,9 @@ local featureDef  =  {
    reclaimable		= false,
    autoreclaimable	= false,
    world            = "allworld",
-	customparams = { 
-		normaltex 		= "unittextures/normalmaps/atlas_euf_buildings_normal.png",
-		normalmaps 		= "yes",			
-	},   
+		customparams = { 
+			normaltex 		   	= "unittextures/normalmaps/atlas_euf_buildings_normal.png",
+			normalmaps 		   	= "yes",
+		}, 	   
 }
 return lowerkeys({[featureDef.name] = featureDef})

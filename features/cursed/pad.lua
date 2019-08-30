@@ -4,7 +4,7 @@ local featureDef  =  {
    blocking       = true,	
    mass			   = 1000000000,
    collisionVolumeType 	= "Box",
-   collisionVolumeScales 	= "80 40 80",
+   collisionVolumeScales 	= "120 40 120",
    collisionVolumeOffsets 	= "0 0 0", 
    damage            = 10000,
    description       = "Storage",
@@ -21,9 +21,9 @@ local featureDef  =  {
    reclaimable		= false,
    autoreclaimable	= false,
    world            = "allworld",
-	customparams = { 
-		normaltex 		= "unittextures/normalmaps/atlas_euf_buildings_normal.png",
-		normalmaps 		= "yes",			
-	},   
+		customparams = { 
+			normaltex 		   	= "unittextures/normalmaps/atlas_euf_buildings_normal.png",
+			normalmaps 		   	= "yes",
+		}, 	   
 }
 return lowerkeys({[featureDef.name] = featureDef})
