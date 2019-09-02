@@ -22,7 +22,7 @@ local objects = {
 local BuildingModuleDef = {}
 local function createBuildingModuleDef(i)
   BuildingModuleDef["buildingfeature_" .. i] = {
-     description = [[Building Attachment]],
+     description = (i-1) .. [[Building Attachment]],
 	 autoreclaimable = false,
      blocking    = true,
      burnable    = false,
