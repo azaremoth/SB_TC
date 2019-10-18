@@ -12,7 +12,7 @@ local objects = {
 local BuildingModuleDef = {}
 local function createBuildingModuleDef(i)
   BuildingModuleDef["buildingmodule_lvl6_" .. i] = {
-     description = [[F6 ]]..[[Building]],
+     description = [[Building]],
 	 autoreclaimable = false,
      blocking    = true,
      burnable    = false,

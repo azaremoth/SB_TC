@@ -40,7 +40,7 @@ local objects = {
 local BuildingModuleDef = {}
 local function createBuildingModuleDef(i)
   BuildingModuleDef["buildingwindow_" .. i] = {
-     description = (i-1) .. [[ Window]],
+     description = [[Window]],
 	 autoreclaimable = false,
      blocking    = true,
      burnable    = false,
