@@ -20,7 +20,8 @@ local unitDef = {
 
   buildPic           = "euf_bunker.png",    
   category           = "EUF LAND HEAVYARMOR",
-  
+  canstop            = true,
+  cantBeTransported  = true,  
   useFootPrintCollisionVolume = true,
   corpse             = "dead",
   customParams       = {
@@ -37,6 +38,7 @@ local unitDef = {
   iconType           = "bigrhombe",
   idleAutoHeal       = 0.01,
   idleTime           = 400,
+  isImmobile		 = true,
   script             = "euf_bunker.lua",
   levelGround        = true,
   maxDamage          = 4500,
@@ -55,6 +57,7 @@ local unitDef = {
   yardMap            = "oooooo oooooo oooooo oooooo oooooo oooooo",
 ------------- transport ---------  
   isfirePlatform     = true,
+  isTransport        = true, 
   loadingRadius 	 = 300,
   releaseHeld        = false,
   transportCapacity  = 8,

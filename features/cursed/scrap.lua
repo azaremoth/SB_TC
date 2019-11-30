@@ -16,7 +16,7 @@ local objects = {
 
 local scrapDef = {}
 local function createscrapDef(i)
-  scrapDef["scrap" .. i] = {
+  scrapDef["scraptype" .. i] = {
      description = [[Scrap]],
      blocking    = true,
      burnable    = false,
