@@ -75,7 +75,7 @@ local unitDef = {
   upright            = true,
   sfxtypes = {
     explosiongenerators = {
-      "custom:MARINEGUNFLARE",
+      "custom:RaiderLaserFlare",
       "custom:MARINEGROUNDFLASH",
       "custom:BLOOD_EXPLOSION",
       "custom:blood_spray",	  

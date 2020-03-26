@@ -119,7 +119,7 @@ local unitDef = {
 
 local weaponDefs = {
   PSI_BLAST = {
-      name                    = [[PSI Blast]],
+    name               = [[PSI Plasma Blast]],
 	accuracy           = 128,
     areaOfEffect       = 96,
     avoidFeature       = false,
@@ -127,7 +127,7 @@ local weaponDefs = {
     burnblow           = true,
     collisionSize      = 8,
     edgeEffectiveness  = 1,
-    energypershot      = 20,
+    energypershot      = 0,
     explosionGenerator = "custom:LIGHTNINGEXPLOSION_BIG",
     explosionSpeed     = 65536,
     fireStarter        = 50,
@@ -160,7 +160,7 @@ local weaponDefs = {
 ------------------------------------------------------------
     damage = {
       default            = 500,
-      flyer              = 500*0.33,
+      flyer              = 500,
       heavy              = 500,
       light              = 500,
     },

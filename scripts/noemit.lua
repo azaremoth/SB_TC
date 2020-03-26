@@ -7,6 +7,7 @@ local high = piece "high"
 local EMIT 	= 1024+0
 
 function script.Create( )
+	Spring.SetUnitNeutral(unitID, true)
 	SendToUnsynced('setselectable', unitID, false)
 	Spring.SetUnitBlocking(unitID, false, false, false, false, false, false, false)
 	Spring.SetUnitCloak(unitID, 2, 0)	

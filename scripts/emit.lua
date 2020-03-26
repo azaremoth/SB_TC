@@ -14,6 +14,7 @@ local function Emiting()
 end
 
 function script.Create( )
+	Spring.SetUnitNeutral(unitID, true)
 	StartThread(Emiting)
 	SendToUnsynced('setselectable', unitID, false)
 	Spring.SetUnitBlocking(unitID, false, false, false, false, false, false, false)

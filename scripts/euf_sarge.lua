@@ -29,6 +29,8 @@ local rpistol = piece 'rpistol'
 local emit_rpistol = piece 'emit_rpistol'
 local plasmagun = piece 'plasmagun'
 local emit_plasma = piece 'emit_plasma'
+local blaster = piece 'blaster'
+local emit_blaster = piece 'emit_blaster'
 local bfg = piece 'bfg'
 local emit_bfg = piece 'emit_bfg'
 local sgbase = piece 'sgbase'
@@ -98,6 +100,7 @@ end
 
 ------------------------ LEVEL VISUALS
 local function LevelAdjust()
+	Hide(blaster)
 	Hide(jetpack)
 	Hide(plasmagun)
 	Hide(lpistol)
@@ -304,13 +307,12 @@ local function RestoreAfterDelay()
 	Move( mask, y_axis, -0.5, 20)	
 	Sleep(400)	
 	Hide(mask)
-	Sleep(1100)	
+	Sleep(600)	
 	Turn2( sgarm3, y_axis, 0, MOVEANIMATIONSPEED*3 )
 	Turn2( sgarm3, z_axis, 0, MOVEANIMATIONSPEED*3 )
+	attacking = false	
 	Sleep(1000)
 	Turn2( head, y_axis, 0, 120 )
-	attacking = false
-	
 	Sleep(100)	
 	StopSpin  ( sgsleeve, z_axis, 50 )
 	Turn2( sgarm1, x_axis, -70, MOVEANIMATIONSPEED*3 )

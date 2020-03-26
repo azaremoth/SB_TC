@@ -121,11 +121,57 @@ local BIGBUGMELEE = {
 local MELEEBASE = {
     name                    = [[Melee]],
 	------------------------------------------
-	avoidFeature			= false,
+	avoidFeature			= true,
 	avoidFriendly      		= false,	  
     canattackground     	= true,
     collideFriendly    		= false,
-    collideFeature    		= false,
+    collideFeature    		= true,
+	------------------------------------------
+	areaOfEffect            = 16,
+    craterAreaOfEffect      = 0,
+	craterBoost             = 0,
+    craterMult              = 0,
+	cylinderTargeting       = 1,		  
+	explosionScar 			= false,
+    fireStarter             = 90,
+    impactOnly              = true,
+    impulseBoost            = 0,
+    impulseFactor           = 0.4,
+    interceptedByShieldType = 2,
+    minIntensity            = 1,
+    noSelfDamage            = true,
+    rgbColor                = [[0 0 0]],
+    soundHit           = "null",	
+    soundStart         = "null",	
+    targetborder            = 1,
+    targetMoveError         = 0.0,
+    tolerance               = 10000,
+    turret                  = true,
+    waterweapon             = true,
+    weaponVelocity          = 1500,
+	------------------------------------------
+    beamTime           		= 0.01,
+    coreThickness      		= 0,
+    largeBeamLaser     		= false,
+    thickness          		= 0,	
+    weaponType              = [[BeamLaser]],
+    texture1           		= "null_texture",
+    texture2           		= "null_texture",
+    texture3           		= "null_texture",
+    texture4           		= "null_texture",
+	beamTTL 				= 0,
+	beamDecay 				= 1,
+	laserFlareSize 			= 0,
+}
+
+local MELEEBASE_NOSOOLD = {
+    name                    = [[Melee]],
+	------------------------------------------
+	avoidFeature			= true,
+	avoidFriendly      		= false,	  
+    canattackground     	= true,
+    collideFriendly    		= false,
+    collideFeature    		= true,
 	------------------------------------------
 	areaOfEffect            = 16,
     craterAreaOfEffect      = 0,
@@ -184,7 +230,7 @@ local MELEEBASE_OLD = {
     turret                  = true,
     waterweapon             = true,
     weaponType              = [[Melee]],
-    weaponVelocity          = 10000,
+    weaponVelocity          = 4000,
 }
 ----------------------------------- FINALIZE ---------------------------------------------
 function WeaponDefCopyTable(tableToCopy, deep)

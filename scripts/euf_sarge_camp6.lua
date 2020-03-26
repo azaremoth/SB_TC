@@ -29,6 +29,8 @@ local rpistol = piece 'rpistol'
 local emit_rpistol = piece 'emit_rpistol'
 local plasmagun = piece 'plasmagun'
 local emit_plasma = piece 'emit_plasma'
+local blaster = piece 'blaster'
+local emit_blaster = piece 'emit_blaster'
 local bfg = piece 'bfg'
 local emit_bfg = piece 'emit_bfg'
 local sgbase = piece 'sgbase'
@@ -98,11 +100,18 @@ end
 
 ------------------------ LEVEL VISUALS
 local function LevelAdjust()
+--	Hide(blaster)
 	Hide(jetpack)
---	Hide(plasmagun)
+	Hide(plasmagun)
 	Hide(lpistol)
 	Hide(rpistol)
 --	Hide(bfg)
+	Hide(sgbase)
+	Hide(sgarm1)
+	Hide(sgarm2)
+	Hide(sgarm3)
+	Hide(sgun)	
+	Hide(sgsleeve)
 end
 
 --Jumps
@@ -285,13 +294,12 @@ local function RestoreAfterDelay()
 --	Move( mask, y_axis, -0.5, 20)	
 	Sleep(400)	
 --	Hide(mask)
-	Sleep(1100)	
+	Sleep(600)	
 	Turn2( sgarm3, y_axis, 0, MOVEANIMATIONSPEED*3 )
 	Turn2( sgarm3, z_axis, 0, MOVEANIMATIONSPEED*3 )
+	attacking = false	
 	Sleep(1000)
 	Turn2( head, y_axis, 0, 120 )
-	attacking = false
-	
 	Sleep(100)	
 	StopSpin  ( sgsleeve, z_axis, 50 )
 	Turn2( sgarm1, x_axis, -70, MOVEANIMATIONSPEED*3 )
@@ -304,50 +312,13 @@ end
 
 --weapon 1 -----------------------------------------------------------------
 function script.QueryWeapon1 ()
-	return emit_sgun end
+			return emit_bfg 
+end
 
 function script.AimFromWeapon1 ()
-	return sgun end
-
-function script.AimWeapon1(heading, pitch)
-
-	Turn2( sgarm1, x_axis, 0, MOVEANIMATIONSPEED*6 )
-	Turn2( sgarm2, x_axis, 0, MOVEANIMATIONSPEED*6 )
-	WaitForTurn( sgarm2, x_axis )	
-	
-	attacking=true
-	Spin ( sgsleeve, z_axis, 300 )	
-	
-	local SIG_Aim = 2^1
-	Signal(SIG_Aim)
-	SetSignalMask(SIG_Aim)
-	
-	Turn( sgarm3, y_axis, heading, 4 )	
-	Turn( sgarm3, x_axis, -pitch, 4 )
-	StartThread( RestoreAfterDelay) 
-	WaitForTurn( sgarm3, x_axis )
-	WaitForTurn( sgarm3, y_axis )
-	return true
-end
-
-function script.FireWeapon1()
-		EmitSfx( emit_sgun, GUNFLARE )
-		return(1)
-end
-
---weapon 2 -----------------------------------------------------------------
-function script.QueryWeapon2 ()
-		if (level < 6) then
-			return emit_rpistol 
-		else
-			return emit_bfg 
-		end
-end
-
-function script.AimFromWeapon2 ()
 	return rloarm end
 
-function script.AimWeapon2(heading, pitch)
+function script.AimWeapon1(heading, pitch)
 	if ((level > 5) and (bfg_sound < 1)) then
 		local x, y, z = Spring.GetUnitPosition(unitID)
 		Spring.PlaySoundFile("sounds/bfg_aim.wav", 80, x, y, z)	
@@ -357,7 +328,7 @@ function script.AimWeapon2(heading, pitch)
 	Turn2( rshoulder, x_axis, 0, MOVEANIMATIONSPEED*6 )
 	attacking=true
 	
-	local SIG_Aim = 2^2
+	local SIG_Aim = 2
 	Signal(SIG_Aim)
 	SetSignalMask(SIG_Aim)
 	
@@ -375,36 +346,27 @@ function script.AimWeapon2(heading, pitch)
 	return true
 end
 
-function script.FireWeapon2()
-		if (level < 6) then
-			EmitSfx( emit_rpistol, GUNFLARE )
-			EmitSfx( emit_rgroundflash, GROUNDFLASH )
-		else
+function script.FireWeapon1()
 			bfg_sound = 0
 			EmitSfx( emit_bfg, BFGFLARE )
 			EmitSfx( emit_rgroundflash, BFGGROUNDFLASH )
-		end
 		return(1)
 end
 
---weapon 3 -----------------------------------------------------------------
-function script.QueryWeapon3 ()
-		if (level < 4) then
-			return emit_lpistol 
-		else
-			return emit_plasma 
-		end
+--weapon 2 -----------------------------------------------------------------
+function script.QueryWeapon2 ()
+			return emit_blaster 
 end
 
-function script.AimFromWeapon3 ()
+function script.AimFromWeapon2 ()
 	return lloarm end
 
-function script.AimWeapon3(heading, pitch)
+function script.AimWeapon2(heading, pitch)
 			
 	Turn2( lshoulder, x_axis, 0, MOVEANIMATIONSPEED*6 )
 	attacking=true
 	
-	local SIG_Aim = 2^3
+	local SIG_Aim = 2^2
 	Signal(SIG_Aim)
 	SetSignalMask(SIG_Aim)
 	
@@ -416,14 +378,9 @@ function script.AimWeapon3(heading, pitch)
 	return true
 end
 
-function script.FireWeapon3()
-		if (level < 4) then
-			EmitSfx( emit_lpistol, GUNFLARE )
-			EmitSfx( emit_lgroundflash, GROUNDFLASH )
-		else
-			EmitSfx( emit_plasma, PLASMAGUNFLARE )
-			EmitSfx( emit_lgroundflash, PLASMAGROUNDFLASH )
-		end
+function script.FireWeapon2()
+--			EmitSfx( emit_plasma, PLASMAGUNFLARE )
+--			EmitSfx( emit_lgroundflash, PLASMAGROUNDFLASH )
 		return(1)
 end
 ---------------------------------------------------------------------------

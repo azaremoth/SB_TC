@@ -12,6 +12,9 @@ local function CreateWallDef(i)
     category         = [[dragonteeth]],
     autoreclaimable    = "0",
 	mass			   = 1500,
+	collisionVolumeOffsets 	= "0 0 0",
+	collisionVolumeScales 	= "18 27 18",
+	collisionVolumeType 	= "CylY",	
 		customparams = { 
 			normaltex 		   	= "unittextures/normalmaps/atlas_euf_buildings_normal.png",
 			normalmaps 		   	= "yes",

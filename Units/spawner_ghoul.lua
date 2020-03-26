@@ -22,8 +22,9 @@ local unitDef = {
     customParams          = {	
 		factionname		   = "neutral",
 		spawnunitcount	   = "4",
-		spawnradius		   = "350",	
+		spawnradius		   = "200",	
 		spawnunit		   = "tc_ghoul",
+		spawningtype	   = "distant",		
 		spawningceg		   = "BURROWING_BIGGER",		
 	},
   damageModifier     = 0.001,

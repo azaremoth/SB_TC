@@ -26,7 +26,7 @@ local unitDef = {
 	factionname	= "cursed",
 	normaltex = "unittextures/normalmaps/atlas_tc_mechanics_normal.png",
 	normalmaps = "yes",	
-    helptext	= "With the precise long-range laserguns the Agares is the perfect choice against all ground targets. It isn't very stable though."	
+    helptext	= "With the precise long-range tachyon beams the Agares is the perfect choice against all armored targets. It isn't very stable though."	
 	},
   defaultmissiontype = "Standby",
   description        = "Heavy Laser Bot",
@@ -102,67 +102,12 @@ local unitDef = {
   },
   weapons = {
     [1]  = {
-      def                = "AGARES_LASER",
-      mainDir            = "0 0 1",
-      maxAngleDif        = 160,
-      badTargetCategory = "AIR",	  
+      name               = "AGARES_TACHYON",
+      badTargetCategory  = "LIGHTARMOR AIR", 
       onlyTargetCategory = "LAND",
     },
   },
 }
-
-
---------------------------------------------------------------------------------
-
-local weaponDefs = {
-  AGARES_LASER = {
-    avoidFriendly      = true,
-	collideFriendly    = true,  
-    accuracy           = 100,
-    areaOfEffect       = 32,
-    beamtime           = 0.75,
-    burnblow           = true,
-    coreThickness      = 0.4,
-    craterBoost        = 0,
-    craterMult         = 0,
-    energypershot           = 0,
-    explosionGenerator = "custom:AGARES_LASER",
-    fireStarter        = 20,
-    impulseBoost       = 0,
-    interceptedByShieldType = 1,
-    largeBeamLaser     = true,
-    laserFlareSize     = 3,
-    name               = "Agares Laser",
-	noSelfDamage     = true,
-    range              = 800,
-    reloadtime         = 7,
-    -- rendertype         = 0,
-	rgbColor           = {0.45, 1, 0.1},
-	rgbColor2 		   = {1, 1, 1},
-    soundHit           = "AgaresLaserHit",
-    soundStart         = "AgaresLaser",
-    soundTrigger       = true,
-	sweepFire		   = false,		
-    targetMoveError    = 0.33,
-    texture1           = "beam1",
-    texture2           = "null_texture",
-    texture3           = "null_texture",
-    texture4           = "flash1",
-    thickness          = 4,
-    tolerance          = 1500,
-    turret             = true,
-    weaponType         = "BeamLaser",
-    weaponVelocity     = 1500,
-    damage = {
-      default            = 1300,
-      flyer              = 1300*0.33,
-      heavy              = 1300,
-      light              = 1300,
-    },
-  },
-}
-unitDef.weaponDefs = weaponDefs
-
 
 --------------------------------------------------------------------------------
 

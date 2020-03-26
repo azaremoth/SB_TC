@@ -22,8 +22,9 @@ local unitDef = {
     customParams          = {	
 		factionname		   = "neutral",
 		spawnunitcount	   = "3",
-		spawnradius		   = "450",	
+		spawnradius		   = "300",	
 		spawnunit		   = "bug_med",
+		spawningtype	   = "close",		
 		spawningceg		   = "BURROWING_BIGGEST",		
 	},
   damageModifier     = 0.001,

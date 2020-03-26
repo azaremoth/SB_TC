@@ -25,10 +25,10 @@ local function createBuildingModuleDef(i)
      reclaimTime = 9999999999,
      mass        = 9999999999,
      object = objects[(i % #objects) + 1] ,
-     footprintX  = 6,
-     footprintZ  = 6,
+     footprintX  = 9,
+     footprintZ  = 7,
 	 collisionVolumeType 	= "Box",
-	 collisionVolumeScales 	= "145 55 115",
+	 collisionVolumeScales 	= "148 55 118",
 	 collisionVolumeOffsets 	= "0 -8 0", 
 	 customparams = { 
 			normaltex 		= "unittextures/normalmaps/atlas_euf_buildings_normal.png",

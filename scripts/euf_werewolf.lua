@@ -177,7 +177,7 @@ end
 
 function script.QueryWeapon1 () return emit_melee end
 
-function script.AimFromWeapon1 () return emit_melee end
+function script.AimFromWeapon1 () return pelvis end
 
 function script.AimWeapon1(heading, pitch)
  	if burrowed then
@@ -230,7 +230,7 @@ Attack=function()
 		Turn2( luparm, y_axis, -90, ATK_UPARM_SPEED_F )		
 		WaitForTurn(ruparm, y_axis)		
       	local x, y, z = Spring.GetUnitPosition(unitID)
-		Spring.PlaySoundFile("sounds/swoosh.wav", 30, x, y, z)
+		Spring.PlaySoundFile("sounds/swoosh_soft.wav", 30, x, y, z)
 		--back to null position
 		Turn2( tail, x_axis, 0, ATK_CHEST_SPEED_B)		
 		Turn2( chest, x_axis, 0, ATK_CHEST_SPEED_B)		
