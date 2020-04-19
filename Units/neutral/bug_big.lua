@@ -50,7 +50,7 @@ local unitDef = {
   objectName         = "bug_big.s3o",
   radarDistance      = 0,
   repairable         = false,  
-  script             = 'bug_melee.lua',
+  script             = 'bug_melee_big.lua',
   selfDestructAs     = "SMOKE_EXPLOSION",
   showNanoFrame      = false,
   side               = "neutral",
@@ -63,7 +63,7 @@ local unitDef = {
   upright            = false,
   sfxtypes = {
     explosiongenerators = {
-      "custom:SUMMONING",
+      "custom:SMOKE_EXPLOSION",
       "custom:BLOOD_EXPLOSION_BIG_GREEN",
       "custom:BURROWING_BIGGEST",
     },
